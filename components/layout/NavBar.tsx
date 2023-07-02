@@ -84,9 +84,9 @@ export default function NavBar() {
               <div className="mt-6 flow-root">
                 <div className="-my-6 divide-y divide-gray-500/10">
                   <div className="space-y-2 py-6">
-                    <Link href="/" className="text-sm font-semibold leading-6 ">Home</Link>
-                    <Link href="/artist" className="text-sm font-semibold leading-6 ">Artist</Link>
-                    <Link href="/genre" className="text-sm font-semibold leading-6 ">Genre</Link>
+                    <Link href="/" className="  -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50 text-black">Home</Link>
+                    <Link href="/artist" className="  -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50 text-black">Artist</Link>
+                    <Link href="/genre" className="  -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50 text-black">Genre</Link>
                     <SearchBar  />
                   </div>
                   <div className="py-6">
