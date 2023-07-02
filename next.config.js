@@ -4,6 +4,10 @@ const nextConfig = {
       config.resolve.modules.push(__dirname);
       return config;
     },
+    images: {
+      domains: ['e-cdns-images.dzcdn.net' , 'tailwindui.com' , 'api.deezer.com'],
+      dangerouslyAllowSVG : true
+    },
   };
   
 module.exports = nextConfig

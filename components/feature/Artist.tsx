@@ -2,6 +2,7 @@ import React from 'react';
 import { useState , useEffect } from 'react';
 import Instance from '@/utils/Instance';
 import ArtistMusic from '../common/ArtistMusics';
+import Image from 'next/image';
 type Props = {
     artist: {
         id: number;
@@ -96,7 +97,7 @@ const Artist: React.FC<Props> = ({ artist }) => {
     return (    
         <div className="container mx-auto">
             <div className="px-4 relative w-full text-center">
-                <img src={artist.picture_small} alt="Ryan Tompson" className="inline-block relative object-cover object-center rounded-2xl h-full shadow-lg shadow-gray-500/25"/>
+                <Image width={500} height={500} src={artist.picture_small} alt="Ryan Tompson" className="inline-block relative object-cover object-center rounded-2xl h-full shadow-lg shadow-gray-500/25"/>
                 <h2 className="text-4xl font-bold mt-3 mb-1 text-blueGray-700">{artist.name}</h2>
             </div>
             <div className="px-4  grid grid-cols-6 gap-4 w-full container">

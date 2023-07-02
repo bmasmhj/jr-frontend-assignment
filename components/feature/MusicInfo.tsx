@@ -1,6 +1,7 @@
 import { Music } from "@/types/index";
 import MusicPlayer from "./MusicPlayer";
 import CountryList from "./ContryList";
+import Image from "next/image";
 
 type Props = {
     music: Music;
@@ -20,7 +21,7 @@ const MusicInfo: React.FC<Props> = ({ music }) => {
                 <div className="max-w-8xl  w-full flex mt-20 container relative">
                     <div className="w-1/5">
                         <div className="bg-gray-100 rounded-lg">
-                            <img className="h-100 rounded w-full object-cover object-center mb-6" src={music.album.cover_big} alt="content" />
+                            <Image width={500} height={500} className="h-100 rounded w-full object-cover object-center mb-6" src={music.album.cover_big} alt="content" />
                         </div>
                     </div>
                     <div className="w-4/5 mx-5 text-white">
@@ -43,7 +44,7 @@ const MusicInfo: React.FC<Props> = ({ music }) => {
                                     return (
                                     <div className="mx-3" key={index}>
                                         <div className="relative group">
-                                            <img src={cont.picture} className="w-10 rounded" alt="" />
+                                            <Image width={500} height={500} src={cont.picture} className="w-10 rounded" alt="" />
                                             <span className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white text-center py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                                 {cont.name}
                                             </span>

@@ -1,6 +1,7 @@
 import Instance from "@/utils/Instance"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 export default function AllGenre() {
     // define type
@@ -36,7 +37,7 @@ export default function AllGenre() {
                 {
                     res.map((dat , indx )=>{
                         return<div onClick={()=> { router.push("/genre/"+dat.id) } } key={indx} className="p-5 cursor-pointer bg-clip-border rounded-xl bg-transparent text-gray-700 shadow-none text-center">
-                        <img src={dat.picture_big} alt="Ryan Tompson" className="inline-block relative object-cover object-center rounded-full h-50 w-50 shadow-lg shadow-gray-500/25" />
+                        <Image width={500} height={500} src={dat.picture_big} alt="Ryan Tompson" className="inline-block relative object-cover object-center rounded-full h-50 w-50 shadow-lg shadow-gray-500/25" />
                             <h5 className="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 mt-6 mb-1">{dat.name}</h5>
                         <div className="mx-auto mt-5">
                         </div>

@@ -2,6 +2,8 @@
 import { useState , useEffect} from "react";
 import Modal from "../common/Modal";
 import SearchBar from "../common/SearchBar";
+import Image from "next/image";
+import Link from "next/link";
 export default function NavBar() {
     const [nav, setNav] = useState(false);
     const [scroll, setScroll] = useState(false);
@@ -29,10 +31,10 @@ export default function NavBar() {
       <header className={scroll ? 'fixed bg-white text-black w-full p-0 top-0 z-50' : 'absolute text-white w-full p-0 top-0 z-50'} id="header">
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
-            </a>
+              <Image width={500} height={500} className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+            </Link>
           </div>
           <div className="flex lg:hidden">
             <button 
@@ -49,9 +51,9 @@ export default function NavBar() {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
-            <a href="/" className="text-sm font-semibold leading-6 ">Home</a>
-            <a href="/artist" className="text-sm font-semibold leading-6 ">Artist</a>
-            <a href="/genre" className="text-sm font-semibold leading-6 ">Genre</a>
+            <Link href="/" className="text-sm font-semibold leading-6 ">Home</Link>
+            <Link href="/artist" className="text-sm font-semibold leading-6 ">Artist</Link>
+            <Link href="/genre" className="text-sm font-semibold leading-6 ">Genre</Link>
             <SearchBar  />
           </div>
       
@@ -63,10 +65,10 @@ export default function NavBar() {
             <div className="fixed inset-0 z-10"></div>
             <div className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
               <div className="flex items-center justify-between">
-                <a href="#" className="-m-1.5 p-1.5">
+                <Link href="#" className="-m-1.5 p-1.5">
                   <span className="sr-only">Your Company</span>
-                  <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
-                </a>
+                  <Image width={500} height={500} className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+                </Link>
                 <button 
                  onClick={() => { 
                   setNav(!nav);
@@ -82,9 +84,10 @@ export default function NavBar() {
               <div className="mt-6 flow-root">
                 <div className="-my-6 divide-y divide-gray-500/10">
                   <div className="space-y-2 py-6">
-                    <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50 text-black">Features</a>
-                    <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50 text-black">Marketplace</a>
-                    <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50 text-black">Company</a>
+                    <Link href="/" className="text-sm font-semibold leading-6 ">Home</Link>
+                    <Link href="/artist" className="text-sm font-semibold leading-6 ">Artist</Link>
+                    <Link href="/genre" className="text-sm font-semibold leading-6 ">Genre</Link>
+                    <SearchBar  />
                   </div>
                   <div className="py-6">
                     <Modal />

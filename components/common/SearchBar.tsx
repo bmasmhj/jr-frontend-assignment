@@ -1,6 +1,7 @@
 import Instance from '@/utils/Instance'
 import { useState } from 'react'
 import { useRouter } from "next/router";
+import Link from 'next/link';
 export default function SearchBar() {
     const router = useRouter()
     const [search, setSearch] = useState('')
@@ -63,22 +64,22 @@ export default function SearchBar() {
                 {
                     loading? (
                         <li className="px-4 py-3 cursor-pointer hover:bg-blue-50 transition-all">
-                            <a href="#" className="flex items-center space-x-4">
+                            <Link href="#" className="flex items-center space-x-4">
                                 <div className="flex flex-col">
                                     <span className="text-sm font-medium text-gray-900">Loading...</span>
                                 </div>
-                            </a>
+                            </Link>
                         </li>
                     ) : (
                         searchResults.map((result, index) => (
                             <li key={index} onClick={()=> { router.push("/music/"+result.id) } } className="px-4 py-3 cursor-pointer hover:bg-blue-50 transition-all">
-                                <a href={"/music/"+result.id} className="flex items-center space-x-4">
+                                <Link href={"/music/"+result.id} className="flex items-center space-x-4">
                                     <img className="w-10 h-10 rounded-full" src={result.album.cover} alt="Artist" />
                                     <div className="flex flex-col">
                                         <span className="text-sm font-medium text-gray-900">{result.title}</span>
                                         <span className="text-sm font-normal text-gray-500">{result.artist.name} min</span>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                         ))
                     )

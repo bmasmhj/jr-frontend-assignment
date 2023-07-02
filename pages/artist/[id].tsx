@@ -92,27 +92,20 @@ export default function ArtistDetail({}) {
                 if(res.data){
                     setArtist(res.data)
                     setNextpage(res.data.tracklist)
-                    getNext(res.data.tracklist)
+                    Instance.get('artist_music.php?id='+res.data.tracklist)
+                    .then(res => {
+                        if(res.data){
+                            setMusics(res.data.data)
+                            setNextpage(res.data.next)
+                            console.log(nextpage)
+                        }
+                        setLoading(false)
+                    })
                 }
                 setLoading(false)
             })
         }
     }, [id]);
-
-    function getNext(nextpages:string){
-        console.log(nextpages)
-        setLoading(true);
-        Instance.get('artist_music.php?id='+nextpages)
-        .then(res => {
-            if(res.data){
-                setMusics(res.data.data)
-                setNextpage(res.data.next)
-                console.log(nextpage)
-            }
-            setLoading(false)
-        })
-    }
-
 
 
   return (
