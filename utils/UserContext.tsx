@@ -1,4 +1,3 @@
-import { type } from "os";
 import { createContext, useState, ReactNode } from "react";
 
 export type NavContextType = {
