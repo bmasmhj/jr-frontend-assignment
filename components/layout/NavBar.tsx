@@ -1,10 +1,32 @@
 
-import { useContext } from "react";
-import { NavContext } from "../../utils/UserContext";
+import { useState , useEffect} from "react";
+import Modal from "../common/Modal";
+import SearchBar from "../common/SearchBar";
 export default function NavBar() {
-    const { nav , setNav } = useContext(NavContext);
+    const [nav, setNav] = useState(false);
+    const [scroll, setScroll] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 0) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log(nav);
+  }, [nav]);
+
     return (
-      <header className="bg-white">
+      <header className={scroll ? 'fixed bg-white text-black w-full p-0 top-0 z-50' : 'absolute text-white w-full p-0 top-0 z-50'} id="header">
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
@@ -27,17 +49,17 @@ export default function NavBar() {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Features</a>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Company</a>
+            <a href="/" className="text-sm font-semibold leading-6 ">Home</a>
+            <a href="/artist" className="text-sm font-semibold leading-6 ">Artist</a>
+            <a href="/genre" className="text-sm font-semibold leading-6 ">Genre</a>
+            <SearchBar  />
           </div>
+      
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+          <Modal />
           </div>
         </nav>
-       {
-          nav && (
-            <div className="lg:hidden" role="dialog" aria-modal="true">
+        <div className={nav ? "lg:hidden hidden" : "lg:hidden"} role="dialog" aria-modal="true">
             <div className="fixed inset-0 z-10"></div>
             <div className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
               <div className="flex items-center justify-between">
@@ -60,19 +82,18 @@ export default function NavBar() {
               <div className="mt-6 flow-root">
                 <div className="-my-6 divide-y divide-gray-500/10">
                   <div className="space-y-2 py-6">
-                    <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
-                    <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
-                    <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
+                    <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50 text-black">Features</a>
+                    <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50 text-black">Marketplace</a>
+                    <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50 text-black">Company</a>
                   </div>
                   <div className="py-6">
-                    <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
+                    <Modal />
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          )
-       }
+        </div>
+      
       </header>
     );
   }
