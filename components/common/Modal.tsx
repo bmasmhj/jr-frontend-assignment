@@ -1,47 +1,40 @@
-import { useEffect } from 'react';
+import { useState } from "react";
 
-import Alpine from 'alpinejs';
-
-const Modal = () => {
-  useEffect(() => {
-    Alpine.start(); // Initialize Alpine.js when the component mounts
-  }, []);
+export default function Modal() {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
-      {/* Trigger button */}
       <button
-        x-data="{ open: false }"
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        onClick={(event) => {
-          // Set the `open` property to `true` on click
-          event.target.dispatchEvent(new CustomEvent('x-data:update', {
-            detail: { open: true },
-            bubbles: true,
-          }));
-        }}
+      className="text-sm font-semibold leading-6 "
+       onClick={() => setIsOpen(true)}
       >
-        Open Modal
+        Login &rarr;
       </button>
 
       {/* Modal */}
-      <div x-data="{ open: false }" x-show="open" className="fixed z-10 inset-0 overflow-y-auto">
+      <div
+      onClick={() => setIsOpen(false)}
+      className={ isOpen ? "fixed z-10 inset-0 overflow-y-auto text-black" : "hidden "}>
         <div className="flex items-center justify-center min-h-screen px-4">
-          <div className="bg-white rounded-lg p-6">
-            <h2 className="text-lg font-bold mb-4">Modal Title</h2>
-            <p>Modal content goes here...</p>
-            <button
-              onClick={(event) => {
-                // Set the `open` property to `false` on click
-                event.target.dispatchEvent(new CustomEvent('x-data:update', {
-                  detail: { open: false },
-                  bubbles: true,
-                }));
-              }}
-              className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            >
-              Close
-            </button>
+          <div className="fixed inset-0 bg-black opacity-50"></div>
+          <div className="bg-white rounded-lg p-6 z-50 w-80 h-80">
+            <div className="mb-3 flex justify-between">
+                <div>
+                  <h1 className="text-2xl font-bold">Login</h1>
+                </div>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="">
+                <svg className="w-6 h-6 text-gray-500 hover:text-gray-700 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+            </div>
+            <div className="flex items-center flex-col justify-center h-full">
+                <p>Login is currently unavailable</p>
+                <span className="text-teal-500">Click anywhere to close</span>
+            </div>
           </div>
         </div>
       </div>
@@ -49,4 +42,4 @@ const Modal = () => {
   );
 };
 
-export default Modal;
+
