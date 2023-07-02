@@ -1,4 +1,3 @@
-import ArtistMusic from "@/components/common/ArtistMusics";
 import MainLayout from "@/components/layout/MainLayout";
 import Instance from "@/utils/Instance";
 import { useRouter } from "next/router";

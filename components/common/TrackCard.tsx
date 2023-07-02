@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Music } from "@/types/index";
 type Props = {
     artist: {
         id: number;

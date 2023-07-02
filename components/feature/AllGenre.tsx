@@ -1,5 +1,4 @@
 import Instance from "@/utils/Instance"
-import Link from "next/link";
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router";
 

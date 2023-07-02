@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState , useEffect } from 'react';
-import { useRouter } from "next/router";
 import Instance from '@/utils/Instance';
 import ArtistMusic from '../common/ArtistMusics';
 type Props = {
@@ -20,19 +19,6 @@ type Props = {
     };
 };
 const Artist: React.FC<Props> = ({ artist }) => {
-    const router = useRouter();
-    const [artists, setArtists] = useState([{
-        id: 0,
-        name: '',
-        picture: '',
-        picture_small: '',
-        picture_medium: '',
-        picture_big: '',
-        picture_xl: '',
-        radio: false,
-        tracklist: '',
-        type: '',
-    }])
     const [music , setMusics] = useState([{
         id: 0,
         title: '',

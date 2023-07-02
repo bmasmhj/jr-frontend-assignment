@@ -1,5 +1,3 @@
-// components/layout/MainLayout.tsx
-
 import Head from 'next/head';
 import NavBar from './NavBar';
 import Footer from './Footer';
