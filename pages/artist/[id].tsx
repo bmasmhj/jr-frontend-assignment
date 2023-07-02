@@ -1,5 +1,4 @@
 import ArtistMusic from "@/components/common/ArtistMusics";
-import SpaceOnly from "@/components/common/SpaceOnly";
 import MainLayout from "@/components/layout/MainLayout";
 import Instance from "@/utils/Instance";
 import { useRouter } from "next/router";
