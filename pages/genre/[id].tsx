@@ -88,13 +88,13 @@ export default function ArtistDetail({}) {
             <div className="py-7 ">
           <div className="flex flex-wrap -mx-4 justify-center">
             <div className="px-4 relative w-full text-center">
-                <h2 className="text-4xl font-bold mt-3 mb-1 text-blueGray-700">Music</h2>
+                <h2 className="text-4xl font-bold mt-3 mb-1 text-blueGray-700">Artist</h2>
                 <p className="mt-2 mb-4 text-xl leading-relaxed text-blueGray-400">Listen Music of Popular artist</p>
             </div>
             <div className="px-4  grid grid-cols-6 gap-4 w-full container">
                 {
                     artist.map((dat , indx)=>{
-                        return<div onClick={()=> { router.push("/music/"+dat.id) } } key={indx} className="p-5 cursor-pointer bg-clip-border rounded-xl bg-transparent text-gray-700 shadow-none text-center">
+                        return<div onClick={()=> { router.push("/artist/"+dat.id) } } key={indx} className="p-5 cursor-pointer bg-clip-border rounded-xl bg-transparent text-gray-700 shadow-none text-center">
                         <Image src={dat.picture_big} alt="Ryan Tompson" className="inline-block relative object-cover object-center rounded-full h-50 w-50 shadow-lg shadow-gray-500/25" width={200} height={200} />
                             <h5 className="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 mt-6 mb-1">{dat.name}</h5>
                         <div className="mx-auto mt-5">
