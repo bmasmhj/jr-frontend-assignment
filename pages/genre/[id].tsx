@@ -31,12 +31,12 @@ export default function ArtistDetail({}) {
 
     const [artist, setArtist] = useState([{
         id: 0,
-        name: '',
-        picture: '',
-        picture_small: '',
-        picture_medium: '',
-        picture_big: '',
-        picture_xl: '',
+        name: 'Loading...',
+        picture: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+        picture_small: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+        picture_medium: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+        picture_big: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+        picture_xl: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
         radio: false,
         tracklist: '',
         type: '',

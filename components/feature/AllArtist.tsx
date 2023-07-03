@@ -21,10 +21,10 @@ export default function AllArtist() {
     const [res , setRes ] = useState([
         {
             ART_PICTURE : {
-                md5: "",
-                format : "",
+                md5: "033d460f704896c9caca89a1d753a137",
+                format : "jpg",
             },
-            ART_NAME : "",
+            ART_NAME : "Loading...",
             ART_ID : 0,
         }
     ]);

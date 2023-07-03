@@ -23,9 +23,7 @@ export default function NavBar() {
     };
   }, []);
 
-  useEffect(() => {
-    console.log(nav);
-  }, [nav]);
+
 
     return (
       <header className={scroll ? 'fixed bg-white text-black w-full p-0 top-0 z-50' : 'absolute text-white w-full p-0 top-0 z-50'} id="header">

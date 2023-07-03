@@ -23,14 +23,14 @@ export default function ArtistDetail({}) {
         contributors: [
             {
                 id: 0,
-                name: '',
+                name: 'Loading...',
                 link: '',
                 share: '',
-                picture: '',
-                picture_small: '',
-                picture_medium: '',
-                picture_big: '',
-                picture_xl: '',
+                picture: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+                picture_small: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+                picture_medium: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+                picture_big: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+                picture_xl: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
                 radio: false,
                 tracklist: '',
                 type: '',
@@ -40,29 +40,29 @@ export default function ArtistDetail({}) {
         artist: {
     
             id: 0,
-            name: '',
+            name: 'Loading...',
             link: '',
             share: '',
-            picture: '',
-            picture_small: '',
-            picture_medium: '',
-            picture_big: '',
-            picture_xl: '',
+            picture: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+            picture_small: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+            picture_medium: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+            picture_big: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+            picture_xl: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
             radio: false,
             tracklist: '',
             type: '',
         },
         album: {
             id: 0,
-            title: '',
+            title: 'Loading...',
             link: '',
             cover: '',
-            cover_small: '',
-            cover_medium: '',
-            cover_big: '',
-            cover_xl: '',
+            cover_small: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+            cover_medium: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+            cover_big: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+            cover_xl: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
             md5_image: '',
-            release_date: '',
+            release_date: '0000-00-00',
             tracklist: '',
             type: '',
         },
@@ -71,17 +71,17 @@ export default function ArtistDetail({}) {
     ]);
     const [artist, setArtist] = useState({
         id: 0,
-        name: '',
+        name: 'Loading...',
         link: '',
         share: '',
-        picture: '',
-        picture_small: '',
-        picture_medium: '',
-        picture_big: '',
-        picture_xl: '',
+        picture: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+        picture_small: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+        picture_medium: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+        picture_big: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+        picture_xl: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
         radio: false,
         tracklist: '',
-        type: '',
+        type: 'tracks',
     });
     const [loading, setLoading] = useState(false);
     useEffect(() => {
@@ -97,7 +97,6 @@ export default function ArtistDetail({}) {
                         if(res.data){
                             setMusics(res.data.data)
                             setNextpage(res.data.next)
-                            console.log(nextpage)
                         }
                         setLoading(false)
                     })

@@ -18,8 +18,8 @@ export default function AllGenre() {
     const [res , setRes ] = useState([
        {
             id : 0,
-            name : '',
-            picture_big : '',
+            name : 'Loading...',
+            picture_big : 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
        }
     ]);
     useEffect(()=>{

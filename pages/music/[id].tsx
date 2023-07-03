@@ -25,14 +25,14 @@ export default function Home({}) {
         contributors: [
             {
                 id: 0,
-                name: '',
+                name: 'Loading...',
                 link: '',
                 share: '',
-                picture: '',
-                picture_small: '',
-                picture_medium: '',
-                picture_big: '',
-                picture_xl: '',
+                picture: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+                picture_small: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+                picture_medium: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+                picture_big: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+                picture_xl: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
                 radio: false,
                 tracklist: '',
                 type: '',
@@ -42,40 +42,39 @@ export default function Home({}) {
         artist: {
     
             id: 0,
-            name: '',
+            name: 'Loading...',
             link: '',
             share: '',
-            picture: '',
-            picture_small: '',
-            picture_medium: '',
-            picture_big: '',
-            picture_xl: '',
+            picture: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+            picture_small: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+            picture_medium: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+            picture_big: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+            picture_xl: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
             radio: false,
             tracklist: '',
             type: '',
         },
         album: {
             id: 0,
-            title: '',
+            title: 'Loading...',
             link: '',
-            cover: '',
-            cover_small: '',
-            cover_medium: '',
-            cover_big: '',
-            cover_xl: '',
+            cover: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+            cover_small: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+            cover_medium: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+            cover_big: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
+            cover_xl: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921',
             md5_image: '',
-            release_date: '',
+            release_date: '0000-00-00',
             tracklist: '',
             type: '',
         },
         type: '',
     })
-    console.log(id);
     useEffect(() => {
     if(id){
         Instance.get(`music.php?id=${id}`)
         .then(res => {
-            console.log(res.data)
+
             setMusic(res.data)
         })
         .catch(err => {

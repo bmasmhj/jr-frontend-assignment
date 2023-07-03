@@ -5,7 +5,7 @@ const nextConfig = {
       return config;
     },
     images: {
-      domains: ['e-cdns-images.dzcdn.net' , 'tailwindui.com' , 'api.deezer.com'],
+      domains: ['e-cdns-images.dzcdn.net' , 'tailwindui.com' , 'api.deezer.com' , 'upload.wikimedia.org'],
       dangerouslyAllowSVG : true
     },
   };
